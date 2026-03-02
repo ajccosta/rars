@@ -13,3 +13,14 @@ jar {
         from 'src/META-INF/MANIFEST.MF'
     }
 }
+
+tasks.named('jar') {
+    doLast {
+        copy {
+            from archiveFile
+            into project.rootDir
+            rename { "rars.jar" } // optional if the name changes
+        }
+    }
+}
+
