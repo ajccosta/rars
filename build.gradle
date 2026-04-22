@@ -24,3 +24,6 @@ tasks.named('jar') {
     }
 }
 
+tasks.withType(JavaCompile).configureEach {
+    options.release = 11
+}
